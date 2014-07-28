@@ -7,14 +7,13 @@
 
 Install [node.js](http://nodejs.org) first.
 
-Install [Yeoman](http://yeoman.io) with [npm](http://npmjs.org):
-```bash
-$ npm install -g yo
-```
-
 Setup registry:
 ```bash
 $ npm config set registry http://npm.oa.com
+```
+Install [Yeoman](http://yeoman.io) with [npm](http://npmjs.org):
+```bash
+$ npm install -g yo generator-lbf-app
 ```
 
 Make a new directory, and enter into it:
