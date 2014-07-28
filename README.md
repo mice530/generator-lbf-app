@@ -38,14 +38,12 @@ $ sudo grunt dev
 
 ## Getting To Know LBF App Generator
 
-LBF App Generator is a integrated solution for creating LBF app and develop it.
- LBF App uses Yeoman as base, which uses
+LBF App Generator is a integrated solution for creating and developing LBF app which uses Yeoman as base:
  * yo - scaffolding tool
  * bower - the client-side package management tool
  * grunt - the IDE and build tool.
 
  Welcome to an **industrial workspace** for front-end!
-
 
 ## License
 
