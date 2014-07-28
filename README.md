@@ -43,7 +43,7 @@ LBF App Generator is a integrated solution for creating and developing LBF app w
  * bower - the client-side package management tool
  * grunt - the IDE and build tool.
 
- Welcome to an **industrial workspace** for front-end!
+Welcome to an **industrial workspace** for front-end!
 
 ## License
 
