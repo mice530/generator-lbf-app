@@ -1,7 +1,7 @@
 {
   "name": "generator-lbf-app",
   "version": "0.1.0",
-  "description": "Yeoman generator",
+  "description": "LBF app generator & industrial workspace",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "mice530/generator-lbf-app",
@@ -22,7 +22,8 @@
   "keywords": [
     "yeoman-generator",
     "generator",
-    "lbf"
+    "lbf",
+    "app"
   ],
   "dependencies": {
     "yeoman-generator": "~0.17.0",
