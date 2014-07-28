@@ -1,0 +1,43 @@
+{
+    "local": {
+        "HOST": "devcombo.b.qq.com",
+        "PATHS": {
+            "cb": {
+                "path": "/static_proxy",
+                "root": "http://local.qiye.qq.com"
+            }
+        },
+        "USE_COMBO": false,
+        "IS_LOCAL": true,
+        "THEME": "http://local.qiye.qq.com/static_proxy/themes/default"
+    },
+
+    "development": {
+        "HOST": "devcombo.b.qq.com",
+        "USE_COMBO": false
+    },
+
+    "test": {
+        "HOST": "oacombo.b.qq.com"
+    },
+
+    "production": {
+    },
+
+    "common": {
+        "THEME": "/crm3/cb/src/themes/default/",
+        "LBF_VERSION": "0.7.7",
+        "VERSION": "20140718",
+        "HOST": "combo.b.qq.com",
+        "PATHS": {
+            "cb": {
+                "path": "/crm3/cb/src/"
+            }
+        },
+        "USE_COMBO": true,
+        "BASE": "/crm3/cb/src/",
+
+        "PTLOGIN_PROXY": "/static_proxy/crm3/cb/src/modules/login/proxy.html",
+        "PTLOGIN_APPID": 717016513
+    }
+}

@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - '0.10'
+before_install:
+  - currentfolder=${PWD##*/}
+  - if [ "$currentfolder" != 'generator-lbf-app' ]; then cd .. && eval "mv $currentfolder generator-lbf-app" && cd generator-lbf-app; fi
+
