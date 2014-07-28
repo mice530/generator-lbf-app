@@ -36,14 +36,15 @@ And for mac os:
 $ sudo grunt dev
 ```
 
-### LBF App Generators
-LBF app generator is
-
-### Getting To Know LBF App Generator & It's Development Environment
+## Getting To Know LBF App Generator
 
 LBF App Generator is a integrated solution for creating LBF app and develop it.
- LBF App uses Yeoman as base, which uses yo as scaffolding tool, bower as the client-side package management tool and grunt as the IDE and build tool.
- Welcome to an industrial workspace for front-end!
+ LBF App uses Yeoman as base, which uses
+ * yo - scaffolding tool
+ * bower - the client-side package management tool
+ * grunt - the IDE and build tool.
+
+ Welcome to an **industrial workspace** for front-end!
 
 
 ## License
