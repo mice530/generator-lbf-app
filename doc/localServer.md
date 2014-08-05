@@ -1,9 +1,10 @@
-# Local server is an integrated local development environment
+# Local Server Instruction
+Local server is an integrated local development environment.
 
 ## Usage
 
 Create app with [generator-lbf-app](http://github.com/mice530/generator-lbf-app)
-Take example.com as example, whose domain is 'example.com' and workspace is /project/example/.
+> Take *example.com* as example, whose domain is *'example.com'* and workspace is *'/project/example/'*.
 
 ### Run grunt task
 Run development grunt task at root of your workspace:
