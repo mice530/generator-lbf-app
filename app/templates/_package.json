@@ -14,7 +14,6 @@
         "grunt-svn-fetch": "^0.1.3",
         "tmod": "0.0.1",
         "underscore": "^1.6.0",
-
         "lbf-hengine": "^1.0.0"
     }
 }

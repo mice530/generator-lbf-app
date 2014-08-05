@@ -27,7 +27,7 @@ module.exports = exports = function(grunt){
             .use(LivereloadMiddleware(options.livereload))
             .use(router.page, HengineMiddleware.page(options.page))
             .use(router.template, HengineMiddleware.template(options.template))
-            .use(router.mockup, connect.static('src/mockup'))
+            .use(router.mockup, connect.static('test/mockup'))
             .use(router.static, connect.static('src'))
             .use(router.cgi, CGIMiddleware(options.cgi));
 
