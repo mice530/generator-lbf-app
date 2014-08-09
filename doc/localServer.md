@@ -24,7 +24,7 @@ $ 127.0.0.1 example.com
 
 Source file:
 ```bash
-/project/example/test/mockup/mockup.html
+/project/example/dev/mockup/mockup.html
 ```
 
 Uri:
@@ -41,7 +41,7 @@ Source template:
 
 Source data:
 ```bash
-/project/example/test/page/mockup.json
+/project/example/dev/page/mockup.json
 ```
 
 Uri:
@@ -53,7 +53,7 @@ http://local.example.com/mockup/mockup.html
 
 Source data:
 ```bash
-/project/example/test/cgi/mod/cgi.json
+/project/example/dev/cgi/mod/cgi.json
 ```
 
 Uri:
