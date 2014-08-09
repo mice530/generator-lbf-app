@@ -20,46 +20,11 @@ $ 127.0.0.1 example.com
 
 ### Preview
 
-#### Mockup pages
+#### [Mockup pages](../app/templates/dirTemplate/dev/mockup/readme.md)
 
-Source file:
-```bash
-/project/example/dev/mockup/mockup.html
-```
+#### [Preview pages](../app/templates/dirTemplate/dev/page/readme.md)
 
-Uri:
-```bash
-http://local.example.com/mockup/mockup.html
-```
-
-#### Preview pages
-
-Source template:
-```bash
-/project/example/views/mockup/mockup.html
-```
-
-Source data:
-```bash
-/project/example/dev/page/mockup.json
-```
-
-Uri:
-```bash
-http://local.example.com/mockup/mockup.html
-```
-
-#### CGI
-
-Source data:
-```bash
-/project/example/dev/cgi/mod/cgi.json
-```
-
-Uri:
-```bash
-http://local.example.com/mod/cgi
-```
+#### [Emulate CGI](../app/templates/dirTemplate/dev/cgi/readme.md)
 
 #### Static files
 
