@@ -38,11 +38,11 @@ module.exports = function(grunt){
             },
 
             protoype: {
-                files: ['src/mockup/**/*.html']
+                files: ['dev/mockup/**/*.html']
             },
 
             test: {
-                files: ['test/page/**/*.json']
+                files: ['dev/page/**/*.json']
             },
 
             options: {
@@ -57,14 +57,7 @@ module.exports = function(grunt){
                 },
                 files: {
                     './src/themes/default/base/base.css': './src/less/default/base/base.less',
-                    './src/themes/default/main/style.css': './src/less/default/main/style.less',
-                    './src/themes/default/import/import.css': './src/less/default/import/import.less',
-                    './src/themes/default/label/label.css': './src/less/default/label/label.less',
-                    './src/themes/default/customer/customerFieldsManage.css': './src/less/default/customer/customerFieldsManage.less',
-                    './src/themes/default/customer/columnSetting.css': './src/less/default/customer/columnSetting.less',
-                    './src/themes/default/customer/test.css': './src/less/default/customer/test.less',
-                    './src/themes/default/group/group.css': './src/less/default/group/group.less',
-					'./src/themes/default/userInfo/userInfo.css': './src/less/default/userInfo/userInfo.less'
+                    './src/themes/default/main/style.css': './src/less/default/main/style.less'
                 }
             }
         },
@@ -97,13 +90,13 @@ module.exports = function(grunt){
 
                 cgi: {
                     env: 'local',
-                    root: __dirname + '/test/cgi/'
+                    root: __dirname + '/dev/cgi/'
                 },
 
                 livereload: true,
 
                 page: {
-                    root: __dirname + '/test/page/',
+                    root: __dirname + '/dev/page/',
                     host: '127.0.0.1',
                     hostname: HENGINE_HOSTNAME,
                     port: HENGINE_HTTP_PORT
