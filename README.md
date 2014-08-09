@@ -44,6 +44,8 @@ LBF App Generator is a integrated solution for creating and developing LBF app w
 
 Welcome to an **industrial workspace** for front-end!
 
+## Learn How To Use [Local Server](doc/localServer.md)
+
 ## License
 
 MIT

@@ -20,13 +20,13 @@ $ 127.0.0.1 example.com
 
 ### Preview
 
-#### [Mockup pages](../app/templates/dirTemplate/dev/mockup/readme.md)
+#### [Preview Mockup](../app/templates/dirTemplate/dev/mockup/)
 
-#### [Preview pages](../app/templates/dirTemplate/dev/page/readme.md)
+#### [Preview Pages](../app/templates/dirTemplate/dev/page/)
 
-#### [Emulate CGI](../app/templates/dirTemplate/dev/cgi/readme.md)
+#### [Emulate CGI](../app/templates/dirTemplate/dev/cgi/)
 
-#### Static files
+#### Static Files
 
 Source file:
 ```bash
