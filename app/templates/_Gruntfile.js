@@ -1,7 +1,8 @@
 /**
  * Created by amos on 14-4-9.
  */
-var path = require('path');
+var path = require('path'),
+    spriteLessTemplate = require('./grunt/sprite/lessTemplate');
 
 var HENGINE_HTTP_PORT = 8081,
     HENGINE_TCP_PORT = 10001,
@@ -66,6 +67,31 @@ module.exports = function(grunt){
                 }
             }
         },
+
+        sprite: {
+            icons: {
+                src: 'src/less/base/icons/**/*.png',
+                destImg: 'src/themes/default/base/images/icons.png',
+                destCSS: 'src/less/base/icons.less',
+                padding: 10,
+                cssFormat: 'less',
+                engine: 'phantomjs',
+
+                // More information can be found below
+                cssTemplate: spriteLessTemplate,
+
+                // OPTIONAL: Manual override for imgPath specified in CSS
+                imgPath: '{root}/themes/default/base/images/icons.png',
+
+                // OPTIONAL: Map variable of each sprite
+                cssVarMap: function (sprite) {
+                    // `sprite` has `name`, `image` (full path), `x`, `y`
+                    //   `width`, `height`, `total_width`, `total_height`
+                    // EXAMPLE: Prefix all sprite names with 'sprite-'
+                    sprite.name = 'icon-' + sprite.name;
+                }
+            }            
+        }
 
         localServer: {
             options: {
