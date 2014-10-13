@@ -1,0 +1,9 @@
+{{each items as slice index}}.{{#slice.name}}{{if index + 1 < items.length}},{{/if}} {{/each}}{
+    background: url("{{#items[0].image}}") no-repeat;
+}
+
+{{each items as slice index}}
+.{{#slice.name}} {
+    background-position: {{#slice.offset_x}}px {{#slice.offset_y}}px;
+}
+{{/each}}}}
