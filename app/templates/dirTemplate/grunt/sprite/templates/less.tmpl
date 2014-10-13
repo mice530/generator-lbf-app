@@ -1,9 +1,11 @@
-{{each items as slice index}}.{{#slice.name}}{{if index + 1 < items.length}},{{/if}} {{/each}}{
-    background: url("{{#items[0].image}}") no-repeat;
+<% for(var i=0, len=items.length; i<len; i++) { %>
+.<%==items[i].name%><%==i+1<len ? ',' : ''%>
+<% } %>{
+    background: url("<%==items[0].image%>") no-repeat;
 }
 
-{{each items as slice index}}
-.{{#slice.name}} {
-    background-position: {{#slice.offset_x}}px {{#slice.offset_y}}px;
+<% for(var i=0, len=items.length; i<len; i++) { %>
+.<%==items[i].name%> {
+    background-position: <%==items[i].offset_x%>px <%==items[i].offset_y%>px;
 }
-{{/each}}}}
+<% } %>
