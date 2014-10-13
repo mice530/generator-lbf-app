@@ -33,6 +33,11 @@ module.exports = function(grunt){
                 tasks: ['less']
             },
 
+            sprites: {
+                files: ['src/less/**/*.png', 'Gruntfile.js', 'grunt/sprite/**/*'],
+                tasks: ['sprite']
+            },
+
             views: {
                 files: ['src/views/**/*.html']
             },
@@ -62,51 +67,35 @@ module.exports = function(grunt){
             }
         },
 
-        // compass for css sprite
-        compass: {
-            dist: {
-                options: {
-                    sassDir: './src/less/default/base',
-                    cssDir: './src/less/default/base',
-                    imagesDir: './src/themes/default/base',
-                    outputStyle: 'expanded'
-                }
-            }
-        },
-
         localServer: {
             options: {
                 server: {
                     port: 80
                 },
 
-                router: {
-                    page: '/page',
-                    template: '/template/cb',
-                    mockup: '/mockup',
-                    static: '/static_proxy',
-                    cgi: '/'
-                },
-
-                cgi: {
-                    env: 'local',
-                    root: __dirname + '/dev/cgi/'
-                },
-
-                livereload: true,
-
-                page: {
-                    root: __dirname + '/dev/page/',
-                    host: '127.0.0.1',
-                    hostname: HENGINE_HOSTNAME,
-                    port: HENGINE_HTTP_PORT
-                },
-
-                template: {
-                    host: '127.0.0.1',
-                    hostname: HENGINE_HOSTNAME,
-                    port: HENGINE_HTTP_PORT
-                }
+                routes: [
+                    ['/page', 'page', {
+                        root: __dirname + '/dev/page/',
+                        host: '127.0.0.1',
+                        hostname: HENGINE_HOSTNAME,
+                        port: HENGINE_HTTP_PORT
+                    }],
+                    ['/template', 'template', {
+                        host: '127.0.0.1',
+                        hostname: HENGINE_HOSTNAME,
+                        port: HENGINE_HTTP_PORT
+                    }],
+                    ['/mockup', 'static', {
+                        root: 'dev/mockup'
+                    }],
+                    ['/static_proxy', 'static', {
+                        root: 'src'
+                    }],
+                    ['/', 'cgi', {
+                        env: 'local',
+                        root: __dirname + '/dev/cgi/'
+                    }]
+                ]
             }
         },
 
@@ -153,10 +142,6 @@ module.exports = function(grunt){
                     limit: 10,
                     logConcurrentOutput: true
                 }
-            },
-
-            init: {
-                tasks: ['svn_fetch:mp']
             }
         }
     });
@@ -165,18 +150,14 @@ module.exports = function(grunt){
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.loadNpmTasks('grunt-svn-fetch');
+    grunt.loadNpmTasks('grunt-contrib-connect');    
     grunt.loadNpmTasks('grunt-concurrent');
-
-//    grunt.loadNpmTasks('grunt-contrib-sass');
-//    grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-spritesmith');
 
     grunt.loadTasks(__dirname + '/grunt/hengine/tasks');
     grunt.loadTasks(__dirname + '/grunt/localServer/tasks');
 
 
     grunt.registerTask('dev', 'launch web server and watch tasks', ['concurrent:dev']);
-    grunt.registerTask('refresh', 'launch web server and watch tasks', ['concurrent:refresh']);
 
 };

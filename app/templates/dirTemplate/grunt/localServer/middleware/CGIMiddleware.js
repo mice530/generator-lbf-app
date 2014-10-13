@@ -20,18 +20,18 @@ module.exports = function(conf){
 
             try {
                 var data = JSON.parse(file);
+
+                var body = JSON.stringify(data.body || {});
+
+                res.writeHead(data.statusCode, {
+                    'Content-Length': Buffer.byteLength(body),
+                    'Content-Type': 'application/json'
+                });
+                res.end(body);
             } catch(err){
                 next(err);
                 return;
             }
-
-            var body = JSON.stringify(data.body || {});
-
-            res.writeHead(data.statusCode, {
-                'Content-Length': Buffer.byteLength(body),
-                'Content-Type': 'application/json'
-            });
-            res.end(body);
         });
     }
 };

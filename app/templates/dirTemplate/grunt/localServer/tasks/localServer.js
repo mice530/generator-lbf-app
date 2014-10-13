@@ -7,29 +7,44 @@ var http = require('http'),
     CGIMiddleware = require('../middleware/CGIMiddleware'),
     HengineMiddleware = require('../middleware/HengineMiddleware');
 
+var defaults = {
+    routes: [
+        ['/page', 'page'],
+        ['/template', 'template'],
+        ['/mockup', 'static'],
+        ['/', 'cgi']
+    ]
+};
+
+var middlewares = {
+    page: HengineMiddleware.page,
+    template: HengineMiddleware.template,
+    static: function(options){
+        return connect.static(options.root);
+    },
+    cgi: CGIMiddleware
+};
+
 module.exports = exports = function(grunt){
     grunt.registerTask('localServer', 'Start a web server for local development.', function(){
-        var options = this.options({
-            router: {
-                page: '/page',
-                template: '/template',
-                mockup: '/mockup',
-                static: '/static_proxy',
-                cgi: '/'
+        var options = this.options(defaults);
+
+        var routes = options.routes;
+        
+        grunt.log.writeln('local server configuring routes');
+        console.log(routes);
+
+        var app = connect().use(LivereloadMiddleware(options.livereload));
+
+        routes.forEach(function(conf){
+            var mw = middlewares[conf[1]];
+
+            if( !mw ){
+                throw new Error('can\t find middleware ' + conf[1]);
             }
+
+            app.use(conf[0], mw(conf[2] || {}));
         });
-
-        var router = options.router;
-
-        console.log(router);
-
-        var app = connect()
-            .use(LivereloadMiddleware(options.livereload))
-            .use(router.page, HengineMiddleware.page(options.page))
-            .use(router.template, HengineMiddleware.template(options.template))
-            .use(router.mockup, connect.static('dev/mockup'))
-            .use(router.static, connect.static('src'))
-            .use(router.cgi, CGIMiddleware(options.cgi));
 
         http
             .createServer(app)

@@ -34,13 +34,13 @@ var LbfAppGenerator = yeoman.generators.Base.extend({
                 type: 'input',
                 name: 'version',
                 message: 'What\'s the version?',
-                default: '0.0.0'
+                default: '0.0.1'
             },
             {
                 type: 'input',
                 name: 'dm',
                 message: 'What\'s the domain?',
-                default: 'qiye.qq.com'
+                default: 'local.qiye.qq.com'
             }
         ];
 
