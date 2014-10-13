@@ -14,6 +14,6 @@
         "tmod": "0.0.1",
         "underscore": "^1.6.0",
         "lbf-hengine": "^1.0.5",
-        "grunt-spritesmith": "^2.1.3",
+        "grunt-spritesmith": "^2.1.3"
     }
 }

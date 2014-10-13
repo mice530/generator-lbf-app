@@ -91,7 +91,7 @@ module.exports = function(grunt){
                     sprite.name = 'icon-' + sprite.name;
                 }
             }            
-        }
+        },
 
         localServer: {
             options: {
