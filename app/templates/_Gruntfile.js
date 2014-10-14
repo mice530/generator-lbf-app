@@ -126,10 +126,16 @@ module.exports = function(grunt){
         },
 
         'hengine-http': {
+            // override hengine options in config file
             options: {
                 // override hengine options in config file
                 port: HENGINE_HTTP_PORT,
+                // setup env
                 env: 'local',
+                // use debug mode
+                debug: true,
+
+                // setup dir
                 root: __dirname + '/src',
                 errorDirectory: 'errors',
 
@@ -137,6 +143,7 @@ module.exports = function(grunt){
                 // for compatibility of window
                 sock: HENGINE_TCP_PORT,
 
+                // setup vhosts
                 vhosts: function(){
                     var vhosts = {};
 
@@ -150,9 +157,8 @@ module.exports = function(grunt){
         },
 
         'hengine-tcache': {
-            options: {
-                // override hengine options in config file
-
+            // override hengine options in config file
+            options: {                
                 // use port instead path
                 // for compatibility of window
                 sock: HENGINE_TCP_PORT,
