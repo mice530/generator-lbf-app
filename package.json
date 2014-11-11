@@ -1,6 +1,6 @@
 {
   "name": "generator-lbf-app",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "LBF app generator & industrial workspace",
   "license": "MIT",
   "main": "app/index.js",

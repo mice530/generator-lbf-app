@@ -69,19 +69,19 @@ module.exports = function(grunt){
         },
 
         sprite: {
-            icons: {
-                src: 'src/less/base/icons/**/*.png',
+            'base-icons': {
+                src: 'src/less/default/base/icons/**/*.png',
                 destImg: 'src/themes/default/base/images/icons.png',
-                destCSS: 'src/less/base/icons.less',
+                destCSS: 'src/less/default/base/icons.less',
                 padding: 10,
                 cssFormat: 'less',
                 engine: 'phantomjs',
 
                 // More information can be found below
-                cssTemplate: spriteLessTemplate,
+                cssTemplate: spriteLessTemplate('base-icons.tmpl'),
 
                 // OPTIONAL: Manual override for imgPath specified in CSS
-                imgPath: '{root}/themes/default/base/images/icons.png',
+                imgPath: 'images/icons.png',
 
                 // OPTIONAL: Map variable of each sprite
                 cssVarMap: function (sprite) {
@@ -90,7 +90,7 @@ module.exports = function(grunt){
                     // EXAMPLE: Prefix all sprite names with 'sprite-'
                     sprite.name = 'icon-' + sprite.name;
                 }
-            }            
+            }           
         },
 
         localServer: {
