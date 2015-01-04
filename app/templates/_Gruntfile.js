@@ -107,17 +107,27 @@ module.exports = function(grunt){
                         hostname: HENGINE_HOSTNAME,
                         port: HENGINE_HTTP_PORT
                     }],
+
                     ['/template', 'template', {
                         host: '127.0.0.1',
                         hostname: HENGINE_HOSTNAME,
                         port: HENGINE_HTTP_PORT
                     }],
+
                     ['/mockup', 'static', {
                         root: 'dev/mockup'
                     }],
+
+                    // 预先移除js文件当中的版本号，
+                    // 即如果是a-253124basdfasg20141105.js -> a.js
+                    ['/static_proxy', 'removeVersion', {
+                        root: 'src'
+                    }],
+
                     ['/static_proxy', 'static', {
                         root: 'src'
                     }],
+
                     ['/', 'cgi', {
                         env: 'local',
                         root: __dirname + '/dev/cgi/'
@@ -187,7 +197,7 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-spritesmith');
 
-    devTasks.loadTasks();
+    devTasks.loadTasks(grunt);
     grunt.registerTask('dev', 'launch web server and watch tasks', ['concurrent:dev']);
 
 };
