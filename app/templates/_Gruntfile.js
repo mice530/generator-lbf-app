@@ -2,6 +2,7 @@
  * Created by amos on 14-4-9.
  */
 var path = require('path'),
+    devTasks = require('lbf-ide-grunt'),
     spriteLessTemplate = require('./grunt/sprite/lessTemplate');
 
 var HENGINE_HTTP_PORT = 8081,
@@ -186,10 +187,7 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-spritesmith');
 
-    grunt.loadTasks(__dirname + '/grunt/hengine/tasks');
-    grunt.loadTasks(__dirname + '/grunt/localServer/tasks');
-
-
+    devTasks.loadTasks();
     grunt.registerTask('dev', 'launch web server and watch tasks', ['concurrent:dev']);
 
 };
